@@ -1,3 +1,2 @@
 # wordpress-wpml-custom-flags
-custom flag switcher for wordpress wpml  
-custom flag images, classes etc for wpml
+change wordpress - wpml flags using custom switcher or filter and switch flags
