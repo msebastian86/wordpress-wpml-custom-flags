@@ -1,4 +1,4 @@
-// add this to functions
+// ======= APPROACH 1 - create custom lang switcher =======
 
 function flag_switcher() {
     $languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' );
@@ -23,3 +23,16 @@ function flag_switcher() {
 }
 
 // add <?php flag_switcher(); ?> in place where you want your switcher
+                
+// ======= APPROACH 2 - filter wpml flags in existing nav's =======
+                
+function wpml_flags($languages)
+{
+    $languages['de']['country_flag_url'] = 'http://scratchy.trailerparkboys.com/wp-content/uploads/2016/07/Julian__Sunnyvale-300x199.jpg';
+    $languages['pl']['country_flag_url'] = assetPath('images') . '/pl.png';
+    $languages['en']['country_flag_url'] = assetPath('images') . '/en.png';
+    
+    return $languages;
+}
+
+add_filter('icl_ls_languages', 'wpml_flags');
